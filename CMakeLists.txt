@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.20...3.24)
 
 project(CycleLengthVerifier VERSION 1.0 LANGUAGES CXX)
 
-find_package(Boost 1.85 REQUIRED COMPONENTS dynamic_bitset multiprecision)
+find_package(Boost REQUIRED COMPONENTS dynamic_bitset multiprecision)
 
 add_executable(CycleLengthVerifier "main.cpp" "TransitionMatrix.cpp")
 
