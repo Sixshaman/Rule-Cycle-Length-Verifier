@@ -12,13 +12,13 @@ def is_power_of_2(n):
 def sord_2(n):  
     m = 1
     while True:
-        two_powered  = 2 ** (m + 1)
+        two_powered  = 2 ** m
         two_n_plus_1 = 2 * n + 1
 
         remainder = two_powered % two_n_plus_1
 
         if remainder == 1 or remainder == 2 * n:
-            return m + 1
+            return m
 
         m += 1
 
@@ -26,7 +26,7 @@ def max_dividing_power_2(n):
     if n == 1:
         return 0
     elif is_power_of_2(n):
-        return n.bit_length() - 2
+        return n.bit_length() - 1
     else:
         return (n & -n).bit_length() - 1
 
