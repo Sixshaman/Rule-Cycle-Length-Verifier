@@ -27,7 +27,8 @@ enum class GridTopology
 
 enum class RuleType
 {
-	Rule150
+	Rule150,
+	Rule90,
 };
 
 struct LaunchOptions
@@ -126,6 +127,11 @@ std::optional<LaunchOptions> ParseCommandLineArgs(int argc, char* argv[])
 		else if(currArgStr == "--rule-150")
 		{
 			result.Rule = RuleType::Rule150;
+		}
+
+		else if(currArgStr == "--rule-90")
+		{
+			result.Rule = RuleType::Rule90;
 		}
 
 		else if(currArgStr == "--topology")
@@ -237,12 +243,20 @@ bool VerifyCycleLength(uint32_t gridWidth, uint32_t gridHeight, GridTopology top
 		{
 			mat.SetRule150Square(gridWidth);
 		}
+		else if(rule == RuleType::Rule90)
+		{
+			mat.SetRule90Square(gridWidth);
+		}
 	}
 	else if(topology == GridTopology::Torus)
 	{
 		if(rule == RuleType::Rule150)
 		{
 			mat.SetRule150Cyclic(gridWidth);
+		}
+		else if (rule == RuleType::Rule90)
+		{
+			mat.SetRule90Cyclic(gridWidth);
 		}
 	}
 

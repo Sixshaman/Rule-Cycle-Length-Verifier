@@ -17,6 +17,9 @@ public:
 	void SetRule150Square(uint32_t gridWidth);
 	void SetRule150Cyclic(uint32_t gridWidth);
 
+	void SetRule90Square(uint32_t gridWidth);
+	void SetRule90Cyclic(uint32_t gridWidth);
+
 	TransitionMatrix Mul(const TransitionMatrix& right);
 	StateVector MulState(const StateVector& state);
 

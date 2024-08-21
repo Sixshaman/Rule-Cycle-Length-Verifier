@@ -135,6 +135,18 @@ void TransitionMatrix::SetRule150Cyclic(uint32_t gridWidth)
 	SetRuleToroidGrid(gridWidth, 1, boost::dynamic_bitset<uint64_t>(3, rule150Bits), 3, 1);
 }
 
+void TransitionMatrix::SetRule90Square(uint32_t gridWidth)
+{
+	uint8_t rule90Bits = 0b101;
+	SetRuleSquareGrid(gridWidth, 1, boost::dynamic_bitset<uint64_t>(3, rule90Bits), 3, 1);
+}
+
+void TransitionMatrix::SetRule90Cyclic(uint32_t gridWidth)
+{
+	uint8_t rule90Bits = 0b101;
+	SetRuleToroidGrid(gridWidth, 1, boost::dynamic_bitset<uint64_t>(3, rule90Bits), 3, 1);
+}
+
 void TransitionMatrix::SetRuleSquareGrid(uint32_t gridWidth, uint32_t gridHeight, const boost::dynamic_bitset<uint64_t>& rule, int32_t ruleWidth, int32_t ruleHeight)
 {
 	mGridWidth  = gridWidth;
